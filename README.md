@@ -187,7 +187,7 @@ The calculator includes comprehensive error handling and validation:
 - Test on multiple browsers and devices.
 - Ensure accessibility compliance.
 
----.
+---
 
 ## 🔮 Future Enhancements
 
@@ -202,7 +202,7 @@ The calculator includes comprehensive error handling and validation:
 
 ## 🔗 Live Demo
 
-- **Netlify Live Site**: (https://jsformvalidationmajorproject.netlify.app/)
+- **Netlify Live Site**: (https://pmminorproject.netlify.app/)
 - **GitHub Repository**: (https://github.com/lokitha-reddy/Calculator-Project)
 
 ---
