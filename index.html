@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="../index.html" class="back-button">← Back to Home</a>
+            <h1>Scientific Calculator</h1>
+        </div>
+        
+        <div class="calculator" id="calculator">
+            <div class="calculator-header">
+                <div class="brand">CASIO</div>
+                <div class="model">fx-991ES PLUS</div>
+                <div class="version">NATURAL-V.P.A.M.</div>
+            </div>
+            
+            <div class="display-container">
+                <div class="display-header">
+                    <div class="display-indicators">
+                        <span>α</span>
+                        <span>MATH</span>
+                        <span>▲</span>
+                    </div>
+                    <div class="display-status">
+                        <span>5⁄2</span>
+                        <span>6</span>
+                    </div>
+                </div>
+                
+                <div class="display">
+                    <div class="display-value" id="display">Calculator Off</div>
+                </div>
+                
+                <div class="display-footer">
+                    <div class="display-functions">
+                        <span id="shift-indicator" class="shift-indicator hidden">SHIFT</span>
+                        <span>ALPHA</span>
+                    </div>
+                    <div class="display-controls">
+                        <span>MODE SETUP</span>
+                        <span>ON</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="buttons-grid" id="buttonsGrid">
+                <!-- Row 1 -->
+                <button class="btn btn-function shift-btn" onclick="toggleShift()">SHIFT</button>
+                <button class="btn btn-function" onclick="performFunction('alpha')">ALPHA</button>
+                <button class="btn btn-function" onclick="performFunction('replay')">REPLAY</button>
+                <button class="btn btn-function" onclick="performFunction('mode')">MODE</button>
+                <button class="btn btn-off" onclick="turnOff()">OFF</button>
+                
+                <!-- Row 2 -->
+                <button class="btn btn-function" onclick="performFunction('x-1')">
+                    <span class="primary">x⁻¹</span>
+                    <span class="secondary">x!</span>
+                </button>
+                <button class="btn btn-function" onclick="performFunction('nCr')">
+                    <span class="primary">nCr</span>
+                    <span class="secondary">nPr</span>
+                </button>
+                <button class="btn btn-function" onclick="performFunction('pol')">
+                    <span class="primary">Pol</span>
+                    <span class="secondary">Rec</span>
+                </button>
+                <button class="btn btn-function" onclick="performFunction('x3')">
+                    <span class="primary">x³</span>
+                    <span class="secondary">∛x</span>
+                </button>
+                <button class="btn btn-function" onclick="performFunction('xy')">
+                    <span class="primary">xʸ</span>
+                    <span class="secondary">ʸ√x</span>
+                </button>
+                
+                <!-- Row 3 -->
+                <button class="btn btn-function" onclick="performFunction('ab/c')">
+                    <span class="primary">ab/c</span>
+                    <span class="secondary">d/c</span>
+                </button>
+                <button class="btn btn-function" onclick="performFunction('sqrt')">
+                    <span class="primary">√</span>
+                    <span class="secondary">x²</span>
+                </button>
+                <button class="btn btn-function" onclick="performFunction('log')">
+                    <span class="primary">log</span>
+                    <span class="secondary">10ˣ</span>
+                </button>
+                <button class="btn btn-function" onclick="performFunction('ln')">
+                    <span class="primary">ln</span>
+                    <span class="secondary">eˣ</span>
+                </button>
+                <button class="btn btn-operator" onclick="performOperation('/')">÷</button>
+                
+                <!-- Row 4 -->
+                <button class="btn btn-function" onclick="performFunction('(-)')">(-)</button>
+                <button class="btn btn-function" onclick="performFunction('deg')">°'"</button>
+                <button class="btn btn-function" onclick="performFunction('hyp')">hyp</button>
+                <button class="btn btn-function" onclick="performFunction('sin')">
+                    <span class="primary">sin</span>
+                    <span class="secondary">sin⁻¹</span>
+                </button>
+                <button class="btn btn-operator" onclick="performOperation('*')">×</button>
+                
+                <!-- Row 5 -->
+                <button class="btn btn-function" onclick="performFunction('rcl')">RCL</button>
+                <button class="btn btn-function" onclick="performFunction('eng')">ENG</button>
+                <button class="btn btn-function" onclick="inputCharacter('(')">(</button>
+                <button class="btn btn-function" onclick="performFunction('cos')">
+                    <span class="primary">cos</span>
+                    <span class="secondary">cos⁻¹</span>
+                </button>
+                <button class="btn btn-operator" onclick="performOperation('-')">-</button>
+                
+                <!-- Row 6 -->
+                <button class="btn btn-number" onclick="inputNumber('7')">7</button>
+                <button class="btn btn-number" onclick="inputNumber('8')">8</button>
+                <button class="btn btn-number" onclick="inputNumber('9')">9</button>
+                <button class="btn btn-operator" onclick="performOperation('%')">%</button>
+                <button class="btn btn-operator" onclick="performOperation('+')">+</button>
+                
+                <!-- Row 7 -->
+                <button class="btn btn-number" onclick="inputNumber('4')">4</button>
+                <button class="btn btn-number" onclick="inputNumber('5')">5</button>
+                <button class="btn btn-number" onclick="inputNumber('6')">6</button>
+                <button class="btn btn-function" onclick="performSquare()">x²</button>
+                <button class="btn btn-function" onclick="performFunction('tan')">
+                    <span class="primary">tan</span>
+                    <span class="secondary">tan⁻¹</span>
+                </button>
+                
+                <!-- Row 8 -->
+                <button class="btn btn-number" onclick="inputNumber('1')">1</button>
+                <button class="btn btn-number" onclick="inputNumber('2')">2</button>
+                <button class="btn btn-number" onclick="inputNumber('3')">3</button>
+                <button class="btn btn-function" onclick="inputCharacter(')')">)</button>
+                <button class="btn btn-function" onclick="performFunction('sto')">STO</button>
+                
+                <!-- Row 9 -->
+                <button class="btn btn-number" onclick="inputNumber('0')">0</button>
+                <button class="btn btn-number" onclick="inputDecimal()">.</button>
+                <button class="btn btn-function" onclick="performFunction('x10')">×10ˣ</button>
+                <button class="btn btn-function" onclick="performFunction('ans')">Ans</button>
+                <button class="btn btn-equals" onclick="calculate()">=</button>
+                
+                <!-- Bottom row -->
+                <button class="btn btn-clear" onclick="clearEntry()">DEL</button>
+                <button class="btn btn-clear-all" onclick="allClear()">AC</button>
+            </div>
+            
+            <!-- Off state overlay -->
+            <div class="off-overlay" id="offOverlay">
+                <div class="off-message">
+                    <div class="off-icon">🔌</div>
+                    <p>Calculator is off</p>
+                    <small>Tap any button to turn on</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>Quick Guide</h3>
+            <div class="instruction-grid">
+                <div class="instruction-item">
+                    <strong>SHIFT:</strong> Access secondary functions (yellow text)
+                </div>
+                <div class="instruction-item">
+                    <strong>Keyboard:</strong> Use number keys, operators, and Enter
+                </div>
+                <div class="instruction-item">
+                    <strong>AC:</strong> All clear - resets everything
+                </div>
+                <div class="instruction-item">
+                    <strong>DEL:</strong> Delete current entry
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
