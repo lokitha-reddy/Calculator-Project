@@ -210,13 +210,14 @@ The calculator includes comprehensive error handling and validation:
 ## 📞 Support
 
 For questions, issues, or contributions:
-    1. Check existing documentation.
-    2. Search for similar issues.
-    3. Create detailed bug reports or feature requests.
-    4. Contact me via email: nlokithareddy226@gmail.com.
+1. Check existing documentation.
+2. Search for similar issues.
+3. Create detailed bug reports or feature requests.
+4. Contact me via email: nlokithareddy226@gmail.com.
 
 ---
 
 **Built with modern web technologies and attention to detail** ⚡
 
 *Featuring responsive design, comprehensive mathematical functions, and an intuitive user interface for both casual and scientific calculations.*
+
